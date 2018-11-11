@@ -1,0 +1,26 @@
+{
+  "name": "Koa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konstantin0s/Koa-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/konstantin0s/Koa-app/issues"
+  },
+  "homepage": "https://github.com/konstantin0s/Koa-app#readme",
+  "dependencies": {
+    "koa": "^2.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
