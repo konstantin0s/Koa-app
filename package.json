@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/konstantin0s/Koa-app#readme",
   "dependencies": {
-    "koa": "^2.6.2"
+    "koa": "^2.6.2",
+    "koa-json": "^2.0.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.6"
