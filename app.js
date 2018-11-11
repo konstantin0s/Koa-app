@@ -3,6 +3,7 @@ const json = require('koa-json');
 const KoaRouter = require('koa-router');
 const path = require('path');
 const render = require('koa-ejs');
+const bodParser = require('koa-bodyparser');
 
 
 const app = new Koa();
@@ -26,6 +27,7 @@ render(app, {
 //Routes
 router.get('/', index);
 router.get('/add', showAdd);
+router.post('/add', add);
 
 //list of Things
 async function index(ctx) {
@@ -33,6 +35,11 @@ async function index(ctx) {
     title: 'Things I Love:',
     things: things
   });
+}
+
+//Add thing function
+async function add() {
+
 }
 
 //Show add page function
