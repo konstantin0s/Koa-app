@@ -1,6 +1,9 @@
 const Koa = require('koa');
 const json = require('koa-json');
 const KoaRouter = require('koa-router');
+const path = require('path');
+const render = require('koa-ejs');
+
 
 const app = new Koa();
 const router = new KoaRouter();
@@ -8,6 +11,19 @@ const router = new KoaRouter();
 app.use(json());
 //Simple Middleware
 // app.use(async ctx => ctx.body = {msg: 'Hello World'});
+
+render(app, {
+  root: path.join(__dirname, 'views'),
+  layout: 'layout',
+  viewExt: 'html',
+  cache: false,
+  debug: false
+})
+
+//Index page
+router.get('/', async ctx => {
+  await ctx.render('index');
+});
 
 router.get('/test', ctx => (ctx.body = 'Hello Test'));
 
