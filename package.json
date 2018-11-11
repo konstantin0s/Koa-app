@@ -19,6 +19,7 @@
   "homepage": "https://github.com/konstantin0s/Koa-app#readme",
   "dependencies": {
     "koa": "^2.6.2",
+    "koa-ejs": "^4.1.2",
     "koa-json": "^2.0.2",
     "koa-router": "^7.4.0"
   },
