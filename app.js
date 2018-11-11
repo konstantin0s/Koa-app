@@ -3,7 +3,7 @@ const json = require('koa-json');
 const KoaRouter = require('koa-router');
 const path = require('path');
 const render = require('koa-ejs');
-const bodParser = require('koa-bodyparser');
+const bodyParser = require('koa-bodyparser');
 
 
 const app = new Koa();
@@ -13,6 +13,9 @@ const router = new KoaRouter();
 const things = ['My Family', 'Programming', 'Music'];
 
 app.use(json());
+
+//Body parser
+app.use(bodyParser());
 //Simple Middleware
 // app.use(async ctx => ctx.body = {msg: 'Hello World'});
 
@@ -38,8 +41,10 @@ async function index(ctx) {
 }
 
 //Add thing function
-async function add() {
-
+async function add(ctx) {
+const body = ctx.request.body;
+things.push(body.thing);
+ctx.redirect('/');
 }
 
 //Show add page function
