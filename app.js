@@ -21,15 +21,26 @@ render(app, {
   viewExt: 'html',
   cache: false,
   debug: false
-})
+});
 
-//Index page
-router.get('/', async ctx => {
+//Routes
+router.get('/', index);
+router.get('/add', showAdd);
+
+//list of Things
+async function index(ctx) {
   await ctx.render('index', {
     title: 'Things I Love:',
     things: things
   });
-});
+}
+
+//Show add page function
+async function showAdd(ctx) {
+  await ctx.render('add');
+}
+
+
 
 router.get('/test', ctx => (ctx.body = 'Hello Test'));
 
